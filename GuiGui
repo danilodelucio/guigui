@@ -1,0 +1,15 @@
+set cut_paste_input [stack 0]
+version 12.1 v5
+push $cut_paste_input
+NoOp {
+name GuiGui1
+tile_color 0xff00ffff
+selected true
+xpos -2967
+ypos 5907
+addUserKnob {20 User l DL}
+addUserKnob {22 gui l "Apply GUI Expression" T "for node in nuke.selectedNodes():\n    node\[\"disable\"].setExpression(\"\$gui\")" +STARTLINE}
+addUserKnob {22 remove_gui l "Remove GUI Expression" -STARTLINE T "for node in nuke.selectedNodes():\n    node\[\"disable\"].clearAnimated()\n    node\[\"disable\"].setValue(False)"}
+addUserKnob {26 "" +STARTLINE}
+addUserKnob {26 info l "" +STARTLINE T "Apply or remove \"\$gui\" expression from the selected nodes.\n\n27-07-2023\nwww.danilodelucio.com"}
+}
